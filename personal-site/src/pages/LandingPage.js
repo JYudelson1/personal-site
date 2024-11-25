@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '../components/ui/card';
 import { Camera } from 'lucide-react';
 
 // Card components with original width restored
