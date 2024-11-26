@@ -2,7 +2,10 @@ import React from 'react';
 import BlogCard from './BlogCard';
 import GitHubProjectCard from './GitHubProjectCard';
 
+import { getProjectImage } from '../../../data/projects/index'
+
 const ProjectCard = ({ project }) => {
+  const image = getProjectImage(project);
   switch (project.type) {
     case 'github':
       return (
@@ -12,6 +15,7 @@ const ProjectCard = ({ project }) => {
           lastCommit={project.github.lastCommit}
           stars={project.github.stars}
           forks={project.github.forks}
+          image={image}
         />
       );
     case 'blog':
@@ -21,6 +25,7 @@ const ProjectCard = ({ project }) => {
           description={project.description}
           lastPost={project.blog.lastPost}
           updated={project.blog.updated}
+          image={image}
         />
       );
     default:
