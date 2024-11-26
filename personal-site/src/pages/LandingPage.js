@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectCard from '../components/ui/cards/ProjectCard';
 import { Camera } from 'lucide-react';
 import { getFeaturedProjects } from '../data/projects';
+import resume from '../assets/resume.pdf'
 
 const NavigationBar = () => {
   return (
@@ -40,7 +41,7 @@ const SocialLinks = () => {
       <a href="#" className="text-gray-600 hover:text-gray-900">
         <Camera className="w-6 h-6" />
       </a>
-      <a href="#" className="text-blue-600 hover:text-blue-800 text-lg" style={{ fontFamily: 'EB Garamond' }}>
+      <a href={resume} className="text-blue-600 hover:text-blue-800 text-lg" style={{ fontFamily: 'EB Garamond' }}>
         View Resume →
       </a>
     </div>
