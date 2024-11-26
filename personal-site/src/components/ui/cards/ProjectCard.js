@@ -26,6 +26,8 @@ const ProjectCard = ({ project }) => {
           lastPost={project.blog.lastPost}
           updated={project.blog.updated}
           image={image}
+          // TODO: Check for URL existing
+          url={project.url}
         />
       );
     default:
