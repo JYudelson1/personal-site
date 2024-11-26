@@ -1,55 +1,7 @@
 import React from 'react';
-import { Card, CardContent } from '../components/ui/card';
+import ProjectCard from '../components/ui/cards/ProjectCard';
 import { Camera } from 'lucide-react';
-
-// Card components with original width restored
-const GitHubProjectCard = ({ title, description, lastCommit, stars, forks }) => {
-  return (
-    <Card className="w-72 hover:shadow-lg transition-shadow duration-200 bg-white shrink-0">
-      <CardContent className="pt-6">
-        <div className="flex items-start gap-3">
-          <Camera className="w-6 h-6 mt-1" />
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg mb-1">{title}</h3>
-            <p className="text-sm text-gray-600 mb-3">{description}</p>
-            <p className="text-sm text-gray-500 mb-4">Last commit: {lastCommit}</p>
-          </div>
-        </div>
-      </CardContent>
-      
-      <div className="px-6 pb-6 flex flex-col gap-3">
-        <div className="flex items-center gap-4 text-sm text-gray-600">
-          <span className="flex items-center gap-1">
-            <Camera className="w-4 h-4" />
-            {stars}
-          </span>
-          <span className="flex items-center gap-1">
-            <Camera className="w-4 h-4" />
-            {forks}
-          </span>
-        </div>
-      </div>
-    </Card>
-  );
-};
-
-const BlogCard = ({ title, description, lastPost, updated }) => {
-  return (
-    <Card className="w-72 hover:shadow-lg transition-shadow duration-200 bg-white shrink-0">
-      <CardContent className="pt-6">
-        <div className="flex items-start gap-3">
-          <Camera className="w-6 h-6 mt-1" />
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg mb-1">{title}</h3>
-            <p className="text-sm text-gray-600 mb-3">{description}</p>
-            <p className="text-sm text-gray-500">Latest: {lastPost}</p>
-            <p className="text-sm text-gray-500">Updated: {updated}</p>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
+import { getFeaturedProjects } from '../data/projects';
 
 const NavigationBar = () => {
   return (
@@ -95,6 +47,27 @@ const SocialLinks = () => {
   );
 };
 
+const FeaturedProjects = () => {
+  const featuredProjects = getFeaturedProjects();
+  
+  return (
+    <section>
+      <h2 className="text-3xl mb-6" style={{ fontFamily: 'EB Garamond' }}>
+        Featured Projects
+      </h2>
+      <div className="relative">
+        <div className="overflow-x-auto pb-6">
+          <div className="flex gap-6" style={{ paddingRight: '20px' }}>
+            {featuredProjects.map(project => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const LandingPage = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FDF6E3' }}>
@@ -121,44 +94,7 @@ const LandingPage = () => {
         </div>
 
         {/* Featured Projects */}
-        <section>
-          <h2 className="text-3xl mb-6" style={{ fontFamily: 'EB Garamond' }}>Featured Projects</h2>
-          <div className="relative">
-            <div className="overflow-x-auto pb-6">
-              <div className="flex gap-6" style={{ paddingRight: '20px' }}>
-                <GitHubProjectCard 
-                  title="MAD Research"
-                  description="Research into detecting and understanding anomalous AI behaviors"
-                  lastCommit="1 day ago"
-                  stars={42}
-                  forks={12}
-                />
-                
-                <BlogCard 
-                  title="Weekly Torah Insights"
-                  description="Contemporary analysis of weekly Torah portions"
-                  lastPost="Vayikra: On Sacred Space"
-                  updated="2 days ago"
-                />
-                
-                <GitHubProjectCard 
-                  title="Pattern Detection"
-                  description="Advanced algorithms for identifying patterns in large datasets"
-                  lastCommit="3 days ago"
-                  stars={28}
-                  forks={8}
-                />
-
-                <BlogCard 
-                  title="Creative Writing Collection"
-                  description="Short stories and experimental prose"
-                  lastPost="The Digital Diaspora"
-                  updated="5 days ago"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <FeaturedProjects />
       </main>
       
       {/* Footer */}

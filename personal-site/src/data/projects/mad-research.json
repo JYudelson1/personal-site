@@ -1,0 +1,13 @@
+{
+  "id": "mad-research",
+  "type": "github",
+  "title": "MAD Research",
+  "description": "Research into detecting and understanding anomalous AI behaviors",
+  "featured": true,
+  "github": {
+    "lastCommit": "1 day ago",
+    "stars": 42,
+    "forks": 12,
+    "url": "https://github.com/username/mad-research"
+  }
+}

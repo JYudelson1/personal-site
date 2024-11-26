@@ -1,0 +1,12 @@
+{
+  "id": "desserts-of-wisdom",
+  "type": "blog",
+  "title": "Desserts of Wisdom",
+  "description": "Contemporary analysis of weekly Torah portions",
+  "featured": true,
+  "blog": {
+    "lastPost": "Vayikra: On Sacred Space",
+    "updated": "2 days ago",
+    "url": "https://substack.com/..."
+  }
+}

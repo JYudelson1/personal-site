@@ -2,7 +2,7 @@
   "name": "personal-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JYudelson1.github.io/personal-site",
+  "homepage": "https://jyudelson.com",
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
     "@testing-library/jest-dom": "^5.17.0",
