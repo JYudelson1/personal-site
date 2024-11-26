@@ -1,7 +1,9 @@
 My personal website. In progress. 
 
 Todos: 
-- [ ] Ongoing/Complete/Hiatus/Abandoned statuses
+- [ ] Card details
+  - [ ] Ongoing/Complete/Hiatus/Abandoned statuses
+  - [ ] The ability to click through for longer descriptions
 - [ ] Page to view all projects
   - [ ] With filtering: ongoing, technical, jewish, etc.
 - [ ] Quick links to blogs/merch
